@@ -5,11 +5,25 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Odin recipes</title>
+  <link rel="stylesheet" href="styles.css">
+  <title>HTML Forms</title>
 </head>
 
 <body>
-  
+  <!-- NOTE--1.3 From semantic point of view the form element tells certain engines and assistive technologies that a input form is about to start, a form with possible multiple elements. Also it links the button to the form.-->
+  <!--! NOTE--1.4 The 'action' attribute allows you to define the URL, the path, this request should be sent to. By default it sends this request to the same URL that was used for serving this page. Very often you want to send data inputted from the user to a different URL. You can add as example a relative path as /user-data. To use the same domain but with different path.-->
+  <!--! NOTE--1.5 The 'method' allows us to chose the type of HTTP request that should be used to submit the form.The type of request that should be send to the server. GET / POST. Typically in forms we are using POST methods. -->
+  <!-- <form action="/user-data" method="POST"> -->
+  <form action="/" method="GET">
+    <!-- NOTE--1.0 Always add the type of the input element even if its the default text. -->
+    <!-- NOTE--1.1 The default display property for both input field and button elements is inline-block. Which means they will be inline unless there is not enough space for both of them. -->
+    <!--! NOTE--1.6 The 'name' attribute is very important if we wanna make sure that any data that is submitted trough the form like here in this input element is passed along with the request.The 'name' attribute allows you to add a unique identifier to this input element. Just as we can do with 'id' but 'id' just won't work for form submission. Instead here we will need a special name attribute which we can specify in addition to the 'id'. We need to use POST request, to have 'name' attribute in the input field with unique identifier  and 'action' attribute in the form with url path in order to see the data the request payload in the dev tools network tab -->
+    <!-- <input type="text" name="user-name"> -->
+    <!--! NOTE--1.7  If we change the form request method to GET amd tje action path to refer to the main page of this server which by default is the index.html. In that case you will find the data submitted trough the form in the payload as a query string parameter. Also you can see it append to the URL after a '?' mark-->
+    <input type="text" name="user-name">
+    <button>Submit</button>
+  </form>
+  <!--! NOTE--1.8 A difference between GET and POST request. For POST requests any data that is submitted will be part of the request itself. It's kind of a some metadata that's attached to it. For GET requests, the primary idea is not to submit data, and therefore its not encoded in the request, but instead its added to into the URL.By adding a question mark and then key value pairs, where the keys are the identifiers you chose on form elements and the values are the pieces of data that have been entered. And if you haver multiple form elements, these key value pair elements would be separated by '&'' '?key=value&key=value&key=value' -->
 </body>
 
 </html>

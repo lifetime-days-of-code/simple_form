@@ -1,0 +1,15 @@
+body {
+  background-color: rgb(31, 30, 30);
+  margin: 8rem;
+}
+
+/* NOTE--1.1  Adding fixed width make sense for the input field*/
+input {
+  width: 20rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+button {
+  display: block;
+}
