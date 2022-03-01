@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <title>HTML Forms</title>
 </head>
@@ -20,7 +23,10 @@
     <!--! NOTE--1.6 The 'name' attribute is very important if we wanna make sure that any data that is submitted trough the form like here in this input element is passed along with the request.The 'name' attribute allows you to add a unique identifier to this input element. Just as we can do with 'id' but 'id' just won't work for form submission. Instead here we will need a special name attribute which we can specify in addition to the 'id'. We need to use POST request, to have 'name' attribute in the input field with unique identifier  and 'action' attribute in the form with url path in order to see the data the request payload in the dev tools network tab -->
     <!-- <input type="text" name="user-name"> -->
     <!--! NOTE--1.7  If we change the form request method to GET amd tje action path to refer to the main page of this server which by default is the index.html. In that case you will find the data submitted trough the form in the payload as a query string parameter. Also you can see it append to the URL after a '?' mark-->
-    <input type="text" name="user-name">
+    <!-- <input type="text" name="user-name"> -->
+    <!--We can/should give our label the special attribute 'for'. With it we kind of connect this label to an input. We need to give that input and "id" and refer to it trough the 'for' attribute. -->
+    <label for="username">Your name</label>
+    <input type="text" name="user-name" id="username">
     <button>Submit</button>
   </form>
   <!--! NOTE--1.8 A difference between GET and POST request. For POST requests any data that is submitted will be part of the request itself. It's kind of a some metadata that's attached to it. For GET requests, the primary idea is not to submit data, and therefore its not encoded in the request, but instead its added to into the URL.By adding a question mark and then key value pairs, where the keys are the identifiers you chose on form elements and the values are the pieces of data that have been entered. And if you haver multiple form elements, these key value pair elements would be separated by '&'' '?key=value&key=value&key=value' -->
