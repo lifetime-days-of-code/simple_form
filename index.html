@@ -27,6 +27,31 @@
     <!--We can/should give our label the special attribute 'for'. With it we kind of connect this label to an input. We need to give that input and "id" and refer to it trough the 'for' attribute. -->
     <label for="username">Your name</label>
     <input type="text" name="user-name" id="username">
+    <label for="useremail">Your email address</label>
+    <input type="email" name="user-email" id="useremail">
+    <label for="userage">Your age</label>
+    <!--! NOTE--2.0 'step' attribute is for telling the input field of type number with how much to increment or decrement its value -->
+    <input type="number" step="2" name="user-age" id="userage">
+    <label for="userpassword">Your password</label>
+    <input type="password" name="user-password" id="userpassword">
+    <label for="userbirthday">Your birthday</label>
+    <input type="date" name='user-birthday' id="userbirthday">
+    <hr>
+    <h2>How should we verify your account?</h2>
+    <!--! NOTE--2.1 To ensure the browser forces the user to chose one of those option is important to give all the inputs the same 'name' -->
+    <!--! NOTE--2.2 We use the 'value' attribute to give a value that is submitted to the server when one of those input is picked. Short meaningful identifiers. We can use the value to add default inputs to input text fields for example. -->
+    <div class="form-control-inline">
+      <input type="radio" name="verify" id="verify-text" value="text-message">
+      <label for="verify-text">Via text message(SMS)</label>
+    </div>
+    <div class="form-control-inline">
+      <input type="radio" name="verify" id="verify-phone" value="phone">
+      <label for="verify-phone">Via phone call</label>
+    </div>
+    <div class="form-control-inline">
+      <input type="radio" name="verify" id="verify-email" value="email">
+      <label for="verify-email">Via email</label>
+    </div>
     <button>Submit</button>
   </form>
   <!--! NOTE--1.8 A difference between GET and POST request. For POST requests any data that is submitted will be part of the request itself. It's kind of a some metadata that's attached to it. For GET requests, the primary idea is not to submit data, and therefore its not encoded in the request, but instead its added to into the URL.By adding a question mark and then key value pairs, where the keys are the identifiers you chose on form elements and the values are the pieces of data that have been entered. And if you haver multiple form elements, these key value pair elements would be separated by '&'' '?key=value&key=value&key=value' -->
