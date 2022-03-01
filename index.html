@@ -52,6 +52,23 @@
       <input type="radio" name="verify" id="verify-email" value="email">
       <label for="verify-email">Via email</label>
     </div>
+    <!--! NOTE--2.3 Here the returned value is 'on' in case of the checkbox being checked or no value at all in case if its NOT.-->
+    <div class="form-control-inline">
+      <input type="checkbox" name="terms" id="agree-terms">
+      <label for="agree-terms">Agree to terms?</label>
+    </div>
+    <!--! NOTE--2.4 With type 'checkbox' when we gave two or more checkboxes the same name, We will be able to select multiple values, but they will be  grouped together when they are send to the server on submit. In case we are grouping two or more checkboxes we should give them a 'value' attribute with identifiers which we can extract on the server later on. We DON'T NEED to specify value if there is only one checkbox because it will return only on or no value at all.-->
+    <div class="form-control-inline">
+      <input type="checkbox" name="contact" id="contact-email" value="email">
+      <label for="contact-email">Contact me via email</label>
+    </div>
+    <div class="form-control-inline">
+      <input type="checkbox" name="contact" id="contact-phone" value="phone">
+      <label for="contact-phone">Contact me via phone</label>
+    </div>
+
+    <label for="usermessage">Your message</label>
+    <textarea name="user-message" id="usermessage" cols="30" rows="10"></textarea>
     <button>Submit</button>
   </form>
   <!--! NOTE--1.8 A difference between GET and POST request. For POST requests any data that is submitted will be part of the request itself. It's kind of a some metadata that's attached to it. For GET requests, the primary idea is not to submit data, and therefore its not encoded in the request, but instead its added to into the URL.By adding a question mark and then key value pairs, where the keys are the identifiers you chose on form elements and the values are the pieces of data that have been entered. And if you haver multiple form elements, these key value pair elements would be separated by '&'' '?key=value&key=value&key=value' -->
