@@ -17,6 +17,7 @@
   <!--! NOTE--1.4 The 'action' attribute allows you to define the URL, the path, this request should be sent to. By default it sends this request to the same URL that was used for serving this page. Very often you want to send data inputted from the user to a different URL. You can add as example a relative path as /user-data. To use the same domain but with different path.-->
   <!--! NOTE--1.5 The 'method' allows us to chose the type of HTTP request that should be used to submit the form.The type of request that should be send to the server. GET / POST. Typically in forms we are using POST methods. -->
   <!-- <form action="/user-data" method="POST"> -->
+  <!--! NOTE--4.0 `<form action="/" method="GET" novalidate>` the no validate attribute is removing the default validation from the form, in case you want to add your own validation using javascript.-->
   <form action="/" method="GET">
     <!-- NOTE--1.0 Always add the type of the input element even if its the default text. -->
     <!-- NOTE--1.1 The default display property for both input field and button elements is inline-block. Which means they will be inline unless there is not enough space for both of them. -->
@@ -26,30 +27,33 @@
     <!-- <input type="text" name="user-name"> -->
     <!--We can/should give our label the special attribute 'for'. With it we kind of connect this label to an input. We need to give that input and "id" and refer to it trough the 'for' attribute. -->
     <label for="username">Your name</label>
-    <input type="text" name="user-name" id="username">
+    <input type="text" name="user-name" id="username" placeholder="Gandalf the Grey" required >
     <label for="useremail">Your email address</label>
-    <input type="email" name="user-email" id="useremail">
+    <input type="email" name="user-email" id="useremail" required>
     <label for="userage">Your age</label>
     <!--! NOTE--2.0 'step' attribute is for telling the input field of type number with how much to increment or decrement its value -->
-    <input type="number" step="2" name="user-age" id="userage">
+    <!--! NOTE--4.1 min and max length restricts the minimum && || maximum number  -->
+    <input type="number" step="2" name="user-age" id="userage" required min="18" max="300">
     <label for="userpassword">Your password</label>
-    <input type="password" name="user-password" id="userpassword">
+    <!--! NOTE--4.2 minlength && || maxlength attributes defining the min or/and max range of a password -->
+    <input type="password" name="user-password" id="userpassword" required minlength="7">
     <label for="userbirthday">Your birthday</label>
-    <input type="date" name='user-birthday' id="userbirthday">
+    <!--! NOTE--4.3 min && || max attributes in the type="date" input field defined the min or/and max date range. The date format is YYYY-MM-DD -->
+    <input type="date" name='user-birthday' id="userbirthday" required min="1921-01-01" max="2000-01-02">
     <hr>
     <h2>How should we verify your account?</h2>
     <!--! NOTE--2.1 To ensure the browser forces the user to chose one of those option is important to give all the inputs the same 'name' -->
     <!--! NOTE--2.2 We use the 'value' attribute to give a value that is submitted to the server when one of those input is picked. Short meaningful identifiers. We can use the value to add default inputs to input text fields for example. -->
     <div class="form-control-inline">
-      <input type="radio" name="verify" id="verify-text" value="text-message">
+      <input type="radio" name="verify" id="verify-text" value="text-message" required>
       <label for="verify-text">Via text message(SMS)</label>
     </div>
     <div class="form-control-inline">
-      <input type="radio" name="verify" id="verify-phone" value="phone">
+      <input type="radio" name="verify" id="verify-phone" value="phone" required>
       <label for="verify-phone">Via phone call</label>
     </div>
     <div class="form-control-inline">
-      <input type="radio" name="verify" id="verify-email" value="email">
+      <input type="radio" name="verify" id="verify-email" value="email" required>
       <label for="verify-email">Via email</label>
     </div>
     <!--! NOTE--2.3 Here the returned value is 'on' in case of the checkbox being checked or no value at all in case if its NOT.-->
@@ -68,6 +72,7 @@
     </div>
 
     <label for="usermessage">Your message</label>
+    <!--! NOTE--4.5 the rows and cols attributes influence how many rows/columns are displayed, but not limiting the entry into the text area.You can add more text than the specified rows/cols can fit. -->
     <textarea name="user-message" id="usermessage" cols="30" rows="10"></textarea>
     <label for="favorite-color">Your favorite color</label>
     <select name="favorite-color" id="favorite-color">
