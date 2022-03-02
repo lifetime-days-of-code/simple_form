@@ -71,12 +71,14 @@
     <textarea name="user-message" id="usermessage" cols="30" rows="10"></textarea>
     <label for="favorite-color">Your favorite color</label>
     <select name="favorite-color" id="favorite-color">
-      <!--NOTE--3.0: usually the default value to option which is submitted is the value that is between the option open and closing tag.If we want to send to the server different value we should specified it explicitly with the value attribute -->
+      <!--! NOTE--3.0: usually the default value to option which is submitted is the value that is between the option open and closing tag.If we want to send to the server different value we should specified it explicitly with the value attribute -->
       <option value="blue">My favorite color is Blue</option>
       <option value="black">My favorite color is Black</option>
       <option value="red">My favorite color is Red</option>
     </select>
-    <button>Submit</button>
+    <!--! NOTE--3.1 You can overwrite the default 'submit' `type` of a button inside a form.-->
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
   </form>
   <!--! NOTE--1.8 A difference between GET and POST request. For POST requests any data that is submitted will be part of the request itself. It's kind of a some metadata that's attached to it. For GET requests, the primary idea is not to submit data, and therefore its not encoded in the request, but instead its added to into the URL.By adding a question mark and then key value pairs, where the keys are the identifiers you chose on form elements and the values are the pieces of data that have been entered. And if you haver multiple form elements, these key value pair elements would be separated by '&'' '?key=value&key=value&key=value' -->
   <a href="semantic-form.html" class="semantic-form-link">Semantic form &#8594</a>
