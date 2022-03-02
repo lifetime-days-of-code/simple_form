@@ -17,7 +17,8 @@ label {
 
 /* NOTE--1.1  Adding fixed width make sense for the input field*/
 input,
-textarea {
+textarea,
+select {
   width: 100%;
   display: block;
   margin-bottom: 1rem;
